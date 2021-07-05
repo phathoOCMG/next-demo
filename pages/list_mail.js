@@ -24,9 +24,9 @@ const rows = [
 ];
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
-    let res = await Axios.get('http://192.168.30.107/mail_ebay/Thongke/get_list/2021-07-02');
+    let res = await Axios.get('http://216.198.92.205/mail_ebay/Thongke/get_list/2021-07-02');
     let data = await res.data
     return {
         props: {
@@ -35,15 +35,10 @@ export async function getStaticProps() {
     }
 }
 
-const useStyles = makeStyles((theme) => ({
-    seeMore: {
-        marginTop: theme.spacing(3),
-    },
-}));
 
 export default function Orders({ Orders }) {
-    const classes = useStyles();
-    console.log(Orders);
+
+
     return (
         <React.Fragment>
             <PersistentDrawerLeft />
